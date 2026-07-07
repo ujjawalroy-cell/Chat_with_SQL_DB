@@ -1,0 +1,9 @@
+langchain-groq
+langchain
+python-dotenv
+langchain_community
+langchain_core
+streamlit
+pymupdf
+arxiv
+wikipedia
