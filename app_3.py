@@ -27,7 +27,7 @@ agent = create_agent()
 while (True):
       user_input = input("user:")
       if user_input.lower() in ["quit","exit"]:
-            print("bye bye bye")
+            print("Good bye ")
             break;
       try:
             response = agent.invoke({"input":user_input})
