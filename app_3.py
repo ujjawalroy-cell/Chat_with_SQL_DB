@@ -5,11 +5,8 @@ import traceback
 import os 
 from dotenv import load_dotenv
 load_dotenv()
-os.environ["GROQ_API_KEY"]=os.getenv("GROQ_API_KEY")
-
-
 def create_agent():
-      db = SQLDatabase.from_uri("sqlite://Classroom.db")
+      db = SQLDatabase.from_uri("sqlite:///Classroom.db")
  
       llm = ChatGroq(
             model = "llama-3.3-70b-versatile"
@@ -27,11 +24,11 @@ agent = create_agent()
 while (True):
       user_input = input("user:")
       if user_input.lower() in ["quit","exit"]:
-            print("Good bye ")
+            print("good bye")
             break;
       try:
             response = agent.invoke({"input":user_input})
             print(response)
       
-      except:
+      except Exception:
             traceback.print_exc()
